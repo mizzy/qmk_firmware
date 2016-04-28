@@ -184,10 +184,10 @@ void matrix_scan_user(void) {
         case OSX:
             ergodox_right_led_1_on();
             break;
-        case WINDOWS:
+        case SYMB:
             ergodox_right_led_2_on();
             break;
-        case SYMB:
+        case MEDIA:
             ergodox_right_led_3_on();
             break;
         default:
