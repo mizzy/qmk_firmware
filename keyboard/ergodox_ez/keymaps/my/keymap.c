@@ -13,12 +13,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: OS X layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |   `    |   1  |   2  |   3  |   4  |   5  | Mute |           |  `~  |   6  |   7  |   8  |   9  |   0  |   -    |
+ * |   `    |   1  |   2  |   3  |   4  |   5  |   6  |           |  `~  |   6  |   7  |   8  |   9  |   0  |   -    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Tab    |   Q  |   W  |   E  |   R  |   T  |  L0  |           |  L1  |   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | CTRL   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '"   |
- * |--------+------+------+------+------+------| LGui |           |  L2  |------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|  L2  |           |   B  |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   | Esc  | OptUp| OptDn| LAlt | LGui |                                       | LGui |   [  |   ]  |  =   | +L2  |
@@ -35,10 +35,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [OSX] = KEYMAP(  // layer 0 : default
         // left hand
-        KC_GRV,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_MUTE,
+        KC_GRV,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_6,
         KC_TAB,         KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   TO(OSX,1),
         KC_LCTL,        KC_A,         KC_S,   KC_D,   KC_F,   KC_G,
-        KC_LSFT,        KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,   KC_LGUI,
+        KC_LSFT,        KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,   TO(MEDIA,1),
  KC_ESC,LSFT(LALT(KC_DOWN)),LSFT(LALT(KC_UP)),KC_LALT,KC_LGUI,
                                                KC_LEFT,       KC_RGHT,
                                                               KC_HOME,
@@ -47,11 +47,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV,      KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
         TO(SYMB,1),  KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             KC_BSLS,
                      KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,          KC_QUOT,
-        TO(MEDIA,1), KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,          KC_RSFT,
+        KC_B,        KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,          KC_RSFT,
                           KC_LGUI,   KC_LBRC,KC_RBRC,KC_EQL,           MO(MEDIA),
-        KC_DOWN,         KC_UP,
+        KC_DOWN,     KC_UP,
         KC_PGUP,
-        KC_PGDN,KC_ENT, KC_SPC
+        KC_PGDN,    KC_ENT, KC_SPC
     ),
 /* Keymap 1: Symbol Layer
  *
@@ -100,13 +100,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |        |      |      |      |      |      |      |           |      | Prev | Play |Next  | Mute |VolDn | VolUp  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |      | Lclk | MsUp | Rclk |      |      |           |      |      |      |      |      |      |        |
+ * | TAB    |      | Lclk | MsUp | Rclk |      |      |           |      |      |      |      |      |      |        |
  * |--------+------+------+------+------+------|  L0  |           |  L0  |------+------+------+------+------+--------|
- * |        | Btn4 |MsLeft|MsDown|MsRght| Btn5 |------|           |------|      | Home | PgDn |  Up  | PgUp |  Play  |
+ * | CTRL   | Btn4 |MsLeft|MsDown|MsRght| Btn5 |------|           |------|      | Home | PgDn |  Up  | PgUp |  Play  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |WhRght|WhDown|WhClk | WhUp |WhLeft|      |           |      |      | End  | Left | Down | Right|        |
+ * | LShift |WhRght|WhDown|WhClk | WhUp |WhLeft|      |           |      |      | End  | Left | Down | Right|        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |MsAcl0|MsAcl1|MsAcl2|                                       |VolUp |VolDn | Mute |      |      |
+ *   |      |MsAcl0|MsAcl1|MsAcl2| LGui |                                       |VolUp |VolDn | Mute |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |      |      |       |      |      |
@@ -119,10 +119,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // MEDIA AND MOUSE
 [MEDIA] = KEYMAP(
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_BTN1, KC_MS_U, KC_BTN2, KC_TRNS, TO(OSX,1),
-       KC_TRNS, KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN5,
-       KC_TRNS, KC_WH_L, KC_WH_D, KC_BTN3, KC_WH_U, KC_WH_R, KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_ACL0, KC_ACL1, KC_ACL2,
+       KC_TAB,  KC_TRNS, KC_BTN1, KC_MS_U, KC_BTN2, KC_TRNS, TO(OSX,1),
+       KC_LCTL, KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN5,
+       KC_LSFT, KC_WH_L, KC_WH_D, KC_BTN3, KC_WH_U, KC_WH_R, KC_TRNS,
+       KC_TRNS, KC_ACL0, KC_ACL1, KC_ACL2, KC_LGUI,
                                            KC_TRNS, KC_TRNS,
                                                     KC_TRNS,
                                   KC_BTN1, KC_BTN2, KC_TRNS,
