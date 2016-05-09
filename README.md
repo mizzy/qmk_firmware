@@ -1,4 +1,5 @@
-[![wercker status](https://app.wercker.com/status/3e97e062ebe3fba441d95cd4cf0c55a9/m "wercker status")](https://app.wercker.com/project/bykey/3e97e062ebe3fba441d95cd4cf0c55a9)
+[![wercker status](https://app.wercker.com/status/a13b425e528972b3224d748b983535d9/m "wercker status")](https://app.wercker.com/project/bykey/a13b425e528972b3224d748b983535d9)[![Download](https://api.bintray.com/packages/stanaka/generic/ergodox.hex/images/download.svg) ](https://bintray.com/stanaka/generic/ergodox.hex/_latestVersion)
+
 # Quantum MK Firmware (ymotongpoo fork)
 
 This is a keyboard firmware based on the [tmk_keyboard firmware](http://github.com/tmk/tmk_keyboard) with some useful features for Atmel AVR controllers, and more specifically, the [OLKB product line](http://olkb.co) and the [ErgoDox EZ](http://www.ergodox-ez.com) keyboard.
@@ -193,7 +194,7 @@ if (timer_elapsed(key_timer) < 100) {
 }
 ```
 
-It's best to declare the `static uint16_t key_timer;` outside of the macro block (top of file, etc). 
+It's best to declare the `static uint16_t key_timer;` outside of the macro block (top of file, etc).
 
 ## Additional keycode aliases for software-implemented layouts (Colemak, Dvorak, etc)
 
@@ -310,4 +311,3 @@ what things are (and likely aren't) too risky.
 - EEPROM has around a 100000 write cycle.  You shouldn't rewrite the
   firmware repeatedly and continually; that'll burn the EEPROM
   eventually.
-					
