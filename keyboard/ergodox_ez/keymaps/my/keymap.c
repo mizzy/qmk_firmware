@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | LShift |WhRght|WhDown|WhClk | WhUp |WhLeft|      |           |      |      | End  | Left | Down | Right|        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |MsAcl0|MsAcl1|MsAcl2| LGui |                                       |VolUp |VolDn | Mute |      |      |
+ *   | RST  |MsAcl0|MsAcl1|MsAcl2| LGui |                                       |VolUp |VolDn | Mute |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |      |      |       |      |      |
@@ -122,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TAB,  KC_TRNS, KC_BTN1, KC_MS_U, KC_BTN2, KC_TRNS, TO(OSX,1),
        KC_LCTL, KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN5,
        KC_LSFT, KC_WH_L, KC_WH_D, KC_BTN3, KC_WH_U, KC_WH_R, KC_TRNS,
-       KC_TRNS, KC_ACL0, KC_ACL1, KC_ACL2, KC_LGUI,
+       RESET, KC_ACL0, KC_ACL1, KC_ACL2, KC_LGUI,
                                            KC_TRNS, KC_TRNS,
                                                     KC_TRNS,
                                   KC_BTN1, KC_BTN2, KC_TRNS,
